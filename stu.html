@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Profile</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Card Container */
+    .profile-card {
+      background-color: #ffffff;
+      border: 1.5px solid #204080;
+      border-radius: 12px;
+      padding: 30px 40px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Title */
+    .profile-card h1 {
+      font-size: 22px;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+    }
+
+    /* Student Image Placeholder Badge */
+    .image-placeholder {
+      display: inline-block;
+      border: 1.5px solid #555;
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 18px;
+    }
+
+    /* Name & Description */
+    .student-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .welcome-text {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+
+    /* Button Grid */
+    .button-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    button {
+      background-color: #1d4ed8;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    /* Theme toggle helper class */
+    .dark-mode {
+      background-color: #1e293b;
+      color: #ffffff;
+    }
+    .dark-mode h1,
+    .dark-mode .student-name,
+    .dark-mode .welcome-text,
+    .dark-mode .image-placeholder {
+      color: #ffffff;
+      border-color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card" id="card">
+    <h1>Student Profile</h1>
+    
+    <div class="image-placeholder">Student Image</div>
+    
+    <div class="student-name" id="name">Rahul Sharma</div>
+    <div class="welcome-text" id="welcome">Welcome to my student profile!</div>
+
+    <div class="button-group">
+      <button onclick="showDetails()">Show Details</button>
+      <button onclick="toggleTheme()">Change Theme</button>
+      <button onclick="addMessage()">Add Message</button>
+      <button onclick="updateName()">Update Name</button>
+    </div>
+  </div>
+
+  <script>
+    function showDetails() {
+      alert("Student ID: 2026TECH123\nCourse: Computer Science");
+    }
+
+    function toggleTheme() {
+      document.getElementById('card').classList.toggle('dark-mode');
+    }
+
+    function addMessage() {
+      const msg = prompt("Enter additional message:");
+      if (msg) {
+        document.getElementById('welcome').innerText = msg;
+      }
+    }
+
+    function updateName() {
+      const newName = prompt("Enter updated student name:");
+      if (newName) {
+        document.getElementById('name').innerText = newName;
+      }
+    }
+  </script>
+
+</body>
+</html>
